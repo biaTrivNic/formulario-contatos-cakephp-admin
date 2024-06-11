@@ -22,13 +22,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo $cakeDescription ?>:
-		<?php echo $this->fetch('title'); ?>
+		Contato.con
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('style');
+		echo $this->Html->css('reset');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -36,28 +36,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'https://cakephp.org'); ?></h1>
-		</div>
+	<header class="header" id="header">
+        <a class="header__logo" href="/">Contato<strong>.con</strong></a>
+        <nav class="header__nav">
+            <a class="header__nav__item" href="/">Home</a>
+            <a class="header__nav__item" href="#">Sobre</a>
+            <a class="header__nav__item" href="messages/add">Contato</a>
+        </nav>
+    </header>
 		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'https://cakephp.org/',
-					array('target' => '_blank', 'escape' => false, 'id' => 'cake-powered')
-				);
-			?>
-			<p>
-				<?php echo $cakeVersion; ?>
-			</p>
-		</div>
-	</div>
+    <footer class="footer">
+        <p class="footer__text">&copy; 2024 Contato.con. <br>Todos os direitos reservados.</p>
+    </footer>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
