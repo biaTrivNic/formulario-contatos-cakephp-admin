@@ -36,23 +36,24 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<header class="header" id="header">
-        <a class="header__logo" href="/">Contato<strong>.con</strong></a>
-        <nav class="header__nav">
-            <a class="header__nav__item" href="/">Home</a>
-            <a class="header__nav__item" href="#">Sobre</a>
-            <a class="header__nav__item" href="messages/add">Contato</a>
-        </nav>
-    </header>
+	<div class="glassmorphism">
+		<header class="header" id="header">
+			<a class="header__logo" href="/">Contato<strong>.con</strong></a>
+			<nav class="header__nav">
+				<a class="header__nav__item" href="/">Home</a>
+				<a class="header__nav__item" href="messages/add">Contato</a>
+			</nav>
+		</header>
 		<div id="content">
 
 			<?php echo $this->Flash->render(); ?>
 
 			<?php echo $this->fetch('content'); ?>
 		</div>
-    <footer class="footer">
+	</div>
+    <!-- <footer class="footer">
         <p class="footer__text">&copy; 2024 Contato.con. <br>Todos os direitos reservados.</p>
-    </footer>
+    </footer> -->
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

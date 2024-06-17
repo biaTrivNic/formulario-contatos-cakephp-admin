@@ -10,8 +10,10 @@
 
 <body>
     <div class="content_contato">
-        <h1 class='title'>Envie sua mensagem</h1>
-        <h2 class="subtitle">Sou todo ouvidos!</h2>
+        <div class="text_container">
+            <h1 class='title'>Envie sua mensagem</h1>
+            <h2 class="subtitle">Queremos saber quais são as suas dúvidas</h2>
+        </div>
         <div class="form_container">
             <?php
             echo $this->Form->create('Message');

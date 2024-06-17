@@ -11,10 +11,10 @@
 
 <body>
     <div class="content_container">
-        <h1 class="title">PRECISA DE UMA PATINHA?</h1>
-        <h2 class="subtitle">Envie uma mensagem com a sua dúvida</h2>
-         <?php echo $this->Html->link(
-            'Entrar em Contato',
+        <h1 class="title">ACHO QUE VOCÊ PRECISA DE UMA AJUDINHA</h1>
+        <h2 class="subtitle">Que tal enviar uma mensagem com a sua dúvida?</h2>
+        <?php echo $this->Html->link(
+            'Entre em Contato',
             array('controller' => 'messages', 'action' => 'add'),
             array('class'=>'btn')
         ); ?>
