@@ -1,6 +1,6 @@
 :root {
-    --bg-color: #6D9396;
-    --text-color: #16231C;
+    --bg-color: #8C715A;
+    --text-color: #fff;
     font-size: 62.5%;
 }
 
@@ -16,30 +16,50 @@
     src: url(/fonts/Poppins/Poppins-Regular.ttf);
     font-weight: 400;
 }
+
 @font-face {
     font-family: "Poppins", sans-serif;
     src: url(/fonts/Poppins/Poppins-Bold.ttf);
     font-weight: 700;
 }
+
 @font-face {
     font-family: "Poppins", sans-serif;
     src: url(/fonts/Poppins/Poppins-Medium.ttf);
     font-weight: 500;
 }
 
+body {
+    background-color: #CFC6BD;
+    background-image: url(/img/view-3d-modern-abstract-sphere-art.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.glassmorphism {
+    margin: 5%;
+    background: rgba(130, 130, 130, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: appear-pop 0.5s 1 0.5s forwards;
+    opacity: 0;
+}
+
 .header {
-    background-color: var(--bg-color);
     color: #fff;
     display: flex;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem 2rem;
     align-items: center;
     font-family: "Poppins", sans-serif;
 }
 
 .header__logo {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .header__logo:hover {
@@ -48,7 +68,7 @@
 }
 
 .header__logo strong {
-    color: #CFE1E5;
+    color: #626060;
 }
 
 .header__nav {
@@ -57,10 +77,11 @@
 }
 
 .header__nav__item {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     position: relative;
     color: #fff;
 }
+
 .header__nav__item::after {
     content: "";
     background-color: #fff;
@@ -70,6 +91,7 @@
     left: 0;
     bottom: 0;
 }
+
 .header__nav__item:hover::after {
     width: 100%;
     transition: 0.5s;
@@ -92,10 +114,12 @@
 ::-webkit-scrollbar-track {
     background-color: #9AB8BA;
 }
+
 ::-webkit-scrollbar {
     width: 10px;
     background: #9AB8BA;
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--bg-color);
 }
@@ -104,7 +128,21 @@
     :root {
         font-size: 150%;
     }
-    
+
 }
 
+@keyframes appear-pop {
+    0% {
+        opacity: 0;
+    }
 
+    70% {
+        opacity: 100%;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: scale(1);
+    }
+}
