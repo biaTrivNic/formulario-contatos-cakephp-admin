@@ -1,6 +1,6 @@
 <?php 
 
-Class AdminsController extends AppController { 
+class UsersController extends AppController { 
 
     public function add() {
     }
