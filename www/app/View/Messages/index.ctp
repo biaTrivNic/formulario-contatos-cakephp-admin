@@ -31,41 +31,6 @@
         </aside>
         <section>
             <h1>Dashboard.</h1>
-            <div>
-                <div>
-                    <div>
-                        <div></div>
-                        <div>
-                            <h2></h2>
-                            <p></p>
-                            <button></button>
-                        </div>
-                    </div>
-                    <div>
-                        <h1></h1>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div>
-                        <div>
-                            <h2></h2>
-                            <p></p>
-                            <div>
-                                <p>86</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h2></h2>
-                            <p></p>
-                            <div>
-                                <p>86</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <table class="table_container">
                 <tr>
                     <th>Name</th>
