@@ -1,5 +1,7 @@
 <?php 
 
+App::uses("SimplePasswordHasher", "Controller/Component/Auth");
+
 class User extends AppModel {
     public $validate = array(
         'nome' => array(
@@ -18,7 +20,7 @@ class User extends AppModel {
                 'message' => 'Sua senha deve conter pelo menos 8 caractéres',
             ),
             'pattern' => array(
-                'rule' => array('custom', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$'),
+                'rule' => array('custom', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/'),
                 'message' => 'Sua senha deve conter pelo menos uma letra maiúscula, uma letra minúscula e um número',
             ),
         ),
@@ -29,5 +31,14 @@ class User extends AppModel {
         //     )
         // ),
     );
+
+    public function beforeSave($options = array()) {
+        if (isset($this->data[$this->alias]['senha'])) {
+            $passwordHasher = new SimplePasswordHasher();
+            $this->data[$this->alias]['senha'] = $passwordHasher->hash($this->data[$this->alias]['senha']);
+        }
+        return true;
+    }
+
 
 }

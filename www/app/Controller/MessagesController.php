@@ -3,7 +3,7 @@
 class MessagesController extends AppController {
     public $helpers = array('Html', 'Form');
 
-    public function index() {
+    public function home() {
         $this->set('messages', $this->Message->find('all'));
     }
 
@@ -16,5 +16,8 @@ class MessagesController extends AppController {
             }
             $this->Flash->error(__('Houve um erro. Tente novamente.'));
         }
+    }
+    public function index() {
+        $this->set('messages', $this->Message->find('all'));
     }
 }
