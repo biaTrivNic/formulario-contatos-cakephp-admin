@@ -29,23 +29,15 @@
             </nav>
             <a href="/users/logout">Logout</a>
         </aside>
-        <section>
-            <h1>Dashboard.</h1>
-            <table class="table_container">
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                </tr>
-                <?php foreach ($messages as $message) : ?>
-                    <tr>
-                        <td><?php echo $this->Html->link(
-                                $message['Message']['nome'],
-                                array('controller' => 'messages', 'action' => 'view', $message['Message']['id'])
-                            ); ?></td>
-                        <td><?php echo $message['Message']['email']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
+        <section class="content_section">
+            <a class="back_btn" href="/messages/index"><img class="back_icon" src="/img/chevron-left-solid.svg" > voltar</a>
+            <div class="message_container">
+                <div>
+                    <p><?php echo ($message['Message']['nome']); ?></p>
+                    <p><?php echo ($message['Message']['email']); ?></p>
+                </div>
+                <p class="message"><?php echo ($message['Message']['mensagem']); ?></p>
+            </div>
         </section>
     </div>
 </body>

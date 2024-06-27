@@ -1,6 +1,5 @@
 :root {
-    --bg-color: #8C715A;
-    --text-color: #fff;
+    --text-color: #1A2740;
     font-size: 62.5%;
 }
 
@@ -30,10 +29,10 @@
 }
 
 body {
-    background-color: #CFC6BD;
-    background-image: url(/img/view-3d-modern-abstract-sphere-art.jpg);
+    background-color: #F5F5F5;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Poppins", sans-serif;
 }
 
 .glassmorphism {
@@ -124,9 +123,32 @@ body {
     background: var(--bg-color);
 }
 
+.error-message {
+    color: red;
+    font-size: 0.7rem;
+}
+
 @media (min-width: 1000px) {
     :root {
         font-size: 150%;
+    }
+
+}
+@media (min-width: 1500px) {
+    :root {
+        font-size: 170%;
+    }
+
+}
+@media (min-width: 2000px) {
+    :root {
+        font-size: 200%;
+    }
+
+}
+@media (min-width: 2500px) {
+    :root {
+        font-size: 250%;
     }
 
 }

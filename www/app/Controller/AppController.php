@@ -31,4 +31,24 @@ App::uses('Controller', 'Controller');
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'authenticate' => array(
+                'Form' => array(
+                    'userModel' => 'User',
+                    'fields' => array('username' => 'email', 'password' => 'senha')
+                )
+            ),
+            'loginAction' => array('controller' => 'users', 'action' => 'login'),
+            'loginRedirect' => array('controller' => 'messages', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
+            'authError' => 'Você precisa estar logado para acessar essa página.',
+            'loginError' => 'Nome de usuário ou senha incorretos.'
+        ),
+        'Flash'
+    );
+    public function beforeFilter() {
+        $this->Auth->allow('login', 'add'); 
+    }
 }
