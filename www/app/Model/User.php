@@ -31,14 +31,13 @@ class User extends AppModel
                 'message' => 'Your password must contain at least one uppercase letter, one lowercase letter, and one number.',
             ),
         ),
-        // 'confirmar_senha' => array(
-        //     'matchPasswords' => array(
-        //         'rule' => 'matchPasswords',
-        //         'message' => 'Suas senhas devem conresponder',
-        //     )
-        // ),
+        'confirmar_senha' => array(
+            'matchPasswords' => array(
+                'rule' => array('matchPasswords'),
+                'message' => 'Suas senhas devem conresponder',
+            )
+        ),
     );
-
     public function beforeSave($options = array())
     {
         if (isset($this->data[$this->alias]['senha'])) {
@@ -46,5 +45,12 @@ class User extends AppModel
             $this->data[$this->alias]['senha'] = $passwordHasher->hash($this->data[$this->alias]['senha']);
         }
         return true;
+    }
+
+    public function matchPasswords($check) {
+        $confirmarSenha = array_values($check)[0];
+        $senha = $this->data[$this->alias]['senha'];
+    
+        return $confirmarSenha === $senha;
     }
 }
