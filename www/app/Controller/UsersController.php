@@ -6,10 +6,10 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('Cadastro feito'));
+                $this->Flash->success(__('Account created.'));
                 return $this->redirect(array('action' => 'login'));
             }
-            $this->Flash->error(__('Houve um erro. Tente novamente.'));
+            $this->Flash->error(__('Oops, something went wrong. Please try again.'));
         }
     }
     
@@ -18,7 +18,7 @@ class UsersController extends AppController {
             if ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Senha ou usuario incorreto.'));
+            $this->Flash->error(__('Incorrect password or email.'));
         }
     }
 
