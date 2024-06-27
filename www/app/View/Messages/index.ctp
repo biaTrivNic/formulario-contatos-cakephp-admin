@@ -66,14 +66,20 @@
                     </div>
                 </div>
             </div>
-            <table>
+            <table class="table_container">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
                 <?php foreach ($messages as $message) : ?>
                     <tr>
-                        <td><?php echo $message['Message']['nome']; ?></td>
+                        <td><?php echo $this->Html->link(
+                                $message['Message']['nome'],
+                                array('controller' => 'messages', 'action' => 'view', $message['Message']['id'])
+                            ); ?></td>
                         <td><?php echo $message['Message']['email']; ?></td>
                     </tr>
                 <?php endforeach; ?>
-                <?php unset($message); ?>
             </table>
         </section>
     </div>

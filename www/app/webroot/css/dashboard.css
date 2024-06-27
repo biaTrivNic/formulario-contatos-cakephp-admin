@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 20% 80%;
     font-family: 'Poppins', sans-serif;
+    height: 100vh;
 }
 
 .menu_container {
@@ -72,4 +73,72 @@
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
+}
+
+table {
+    border-collapse: collapse; 
+    width: 100%; 
+    font-size: 0.8rem;
+}
+
+table, th, td {
+    border: 1px solid #ccc; 
+    padding: 8px; 
+    text-align: left; 
+}
+
+th {
+    background-color: #f2f2f2; 
+    font-weight: 700;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+.message_container {
+    border-collapse: collapse; 
+    border: 1px solid #ccc; 
+    border-radius: 0.2rem;
+    margin: 0 20%;
+}
+.message_container div{
+    background-color: #e2e2e2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.message {
+    padding: 2rem;
+}
+
+.content_section {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back_btn {
+    position: absolute;
+    top: 1rem;
+    left: 22%;
+}
+.back_btn:hover{
+    color: #757575;
+}
+.back_btn:hover .back_icon{
+    animation: slide 1s infinite forwards;
+}
+.back_icon {
+    width: 0.4rem;
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateX(-0.2rem);
+    }
 }
